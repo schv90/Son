@@ -1,0 +1,134 @@
+#1
+
+x<-c(17, 16, 20, 24, 22, 15, 21, 18)
+
+ 
+x[which(x>20)]
+
+x[x>20]
+
+y<-x
+
+for (i in 1:8)
+
+{
+
+  if (y[i]>20)
+
+  {
+
+    y[i]=100
+
+  }
+
+}
+
+y
+
+#2
+
+x1<-diag(c(4,5,6,7,8))
+
+x<-x1-1
+
+ 
+y<-x[,-5]
+
+yinfo<-c()
+
+yinfo[1]<-ncol(y)
+
+yinfo[2]<-nrow(y)
+
+ 
+y1<-y
+
+for (i in 1:5)
+
+{
+
+  for (j in 1:4)
+
+  {
+
+    if (y[i,j]==-1)
+
+    {
+
+      y1[i,j]<-0
+
+    }
+
+  }
+
+}
+
+#3
+
+rdata<-read.table("C:/tmp/rowdata.txt",Header=T,stringAsFactors=F)
+
+is.na(rdata)
+
+a<-!is.na(rdata$v2))
+
+b<-!is.na(rdata$v3))
+
+x<-rep(0,100)
+
+for (i in 1:100)
+
+{
+
+  if (a[i]==T&b[i]==T)
+
+  {
+
+    x[i]<-i 
+
+  }
+
+}
+
+rdata1<-rdata[x,]
+
+#4
+
+temp<-list('c(TRUE, FALSE)', 'diag(c(1,1))','seq(0,1,length=100)',1,2,3,4)
+
+temp[[2]]<-NULL
+
+temp[[3]]
+
+length(temp)
+
+#5
+
+a1<- -1:2
+
+a2<- 1:2
+
+a1+a2
+
+ 
+a1 <- -(1:2)
+
+a2 <- 1:2
+
+a1 + a2
+
+
+a1 <- matrix(0,2,2)
+
+a2 <- c(3,4)
+
+a1 + a2
+
+
+a1 <- matrix(1:4,2,2)
+
+a1[a1>2] = 0
+
+
+a1 <- 1:5
+
+a1[-1] - a1[-length(a1)]
