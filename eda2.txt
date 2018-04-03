@@ -1,0 +1,138 @@
+a1=1
+a2=3
+for (i in 1:18)
+{
+  a3<-0.9*a2-0.1*a1+1
+  a1<-a2
+  a2<-a3
+}
+a3
+
+a1=1
+a2=3
+for (i in 3:20)
+{
+  a3<-0.9*a2-0.1*a1+1
+  a1<-a2
+  a2<-a3
+  if (a3>4)
+    break
+}
+print(i)
+sum(A[1,])
+A <- matrix( runif(100), 50, 5)
+v<-c()
+for (i in 1:nrow(A))
+{
+  v[i]<-sum(A[i,])
+}
+
+tmp = rep(0, 10)
+a <- 10:1
+idx = 1
+for ( j in a)
+{
+  if (j<5)
+  {
+    tmp[idx] <- a[j]
+    idx <- idx + 1
+  }
+}
+sample(1:10)
+x<-sample(1:10,5000,replace=T)
+sid<-matrix(x,1000,5)
+
+m.mat<-matrix(0,10,5)
+sid[1]
+
+m.mat = matrix(0, 10, 5 )
+for ( i in 1:10)
+{
+  x.sub = x[ which(sid = i) ,]
+  m.mat[i,] = colMeans(x.sub)
+}
+
+set.seed(1)
+a = list()
+for (i in 1:1000)
+  { x = rpois(1,4)+1
+  x = min(x,10) 
+  a[[i]] = sample(1:10, x)
+  }
+b<-c()
+for (i in 1:1000)
+{
+  b[i]<-length(a[[i]])
+}
+c<-c()
+for (i in 1:10)
+{
+  c[i]<-sum(b==i)
+}
+
+set.seed(1)
+m1 = 10
+m2 = 5
+num = 0
+rbinom(1,1,1/2)
+
+for (i in 1:4)
+{
+  if (rbinom(1,1,1/2)==0)
+  {
+    m1=m1-1
+    m2=m2+1
+  } else {
+    m1=m1+1
+    m2=m2-1
+  }
+}
+
+for (i in 1:10000)
+{
+  if (rbinom(1,1,1/2)==0)
+  {
+    m1=m1-1
+    m2=m2+1
+  } else {
+    m1=m1+1
+    m2=m2-1
+  }
+  if (m1==0|m2==0)
+    break
+}
+print(i)
+m1
+m.1<-0
+ti<-c(10,15,20,25)
+winrate<-c()
+v<-c()
+for (j in 1:4)
+{
+  for (k in 1:200)
+  {
+    set.seed(k)
+    m1 = 10
+    m2 =ti[j]
+    num = 0
+    for (i in 1:10000)
+    {
+      if (rbinom(1,1,1/2)==0)
+      {
+        m1=m1-1
+        m2=m2+1
+      } else {
+        m1=m1+1
+        m2=m2-1
+      }
+      if (m1==0|m2==0)
+        break
+    }
+    if (m1==0)
+    {
+      m.1<-m.1+1
+      v[j]<-i
+    }
+    winrate[j]<-m.1/v[j]
+  }
+}
